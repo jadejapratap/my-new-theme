@@ -113,21 +113,21 @@
           "type": "tab",
           "settings": {
             "label": "Best Sellers",
-            "collection": ""
+            "collection": "accessories"
           }
         },
         "tab_e4f5g6": {
           "type": "tab",
           "settings": {
             "label": "New Products",
-            "collection": ""
+            "collection": "crop-tops"
           }
         },
         "tab_h7i8j9": {
           "type": "tab",
           "settings": {
             "label": "Sale Products",
-            "collection": ""
+            "collection": "automated-collection"
           }
         }
       },
