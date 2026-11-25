@@ -15,6 +15,7 @@
         "slide_d4e5f6": {
           "type": "slide",
           "settings": {
+            "image": "shopify://shop_images/divi-Simplified-croptop-yellow.jpg",
             "heading": "Fall-Winter\nClearance Sales",
             "button_label": "See all products",
             "button_link": "shopify://collections/all",
@@ -111,19 +112,22 @@
         "tab_b1c2d3": {
           "type": "tab",
           "settings": {
-            "label": "Best Sellers"
+            "label": "Best Sellers",
+            "collection": ""
           }
         },
         "tab_e4f5g6": {
           "type": "tab",
           "settings": {
-            "label": "New Products"
+            "label": "New Products",
+            "collection": ""
           }
         },
         "tab_h7i8j9": {
           "type": "tab",
           "settings": {
-            "label": "Sale Products"
+            "label": "Sale Products",
+            "collection": ""
           }
         }
       },
