@@ -19,6 +19,7 @@ class AccordionCustom extends HTMLElement {
 
     return summary;
   }
+  
 
   get #disableOnMobile() {
     return this.dataset.disableOnMobile === 'true';
