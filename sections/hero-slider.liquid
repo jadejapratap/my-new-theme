@@ -1,0 +1,413 @@
+{%- liquid
+  assign slide_count = section.blocks.size
+-%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} .hs {
+    --hs-height: {{ section.settings.height }}px;
+    --hs-height-mobile: {{ section.settings.height_mobile }}px;
+    --hs-text-offset: {{ section.settings.text_offset }}%;
+  }
+{%- endstyle -%}
+
+<div
+  class="hs"
+  data-hero-slider
+  data-autoplay="{{ section.settings.autoplay }}"
+  data-interval="{{ section.settings.interval | times: 1000 }}"
+  aria-roledescription="carousel"
+  aria-label="{{ section.settings.aria_label | escape }}"
+>
+  <div class="hs__track" data-hs-track>
+    {%- for block in section.blocks -%}
+      <div
+        class="hs__slide"
+        style="--hs-bg: {{ block.settings.background_color }}; --hs-text: {{ block.settings.text_color }};"
+        role="group"
+        aria-roledescription="slide"
+        aria-label="{{ forloop.index }} / {{ slide_count }}"
+        {{ block.shopify_attributes }}
+      >
+        <div class="hs__content">
+          {%- if block.settings.heading != blank -%}
+            <h2 class="hs__heading">{{ block.settings.heading | newline_to_br }}</h2>
+          {%- endif -%}
+          {%- if block.settings.button_label != blank and block.settings.button_link != blank -%}
+            <a href="{{ block.settings.button_link }}" class="hs__button">{{ block.settings.button_label }}</a>
+          {%- endif -%}
+        </div>
+        <div class="hs__media">
+          {%- if block.settings.image != blank -%}
+            {%- if forloop.first -%}
+              {{
+                block.settings.image
+                | image_url: width: 1600
+                | image_tag:
+                  widths: '800, 1200, 1600, 2000',
+                  sizes: '(min-width: 750px) 60vw, 100vw',
+                  loading: 'eager',
+                  fetchpriority: 'high',
+                  class: 'hs__image'
+              }}
+            {%- else -%}
+              {{
+                block.settings.image
+                | image_url: width: 1600
+                | image_tag:
+                  widths: '800, 1200, 1600, 2000',
+                  sizes: '(min-width: 750px) 60vw, 100vw',
+                  loading: 'lazy',
+                  class: 'hs__image'
+              }}
+            {%- endif -%}
+          {%- else -%}
+            <div class="hs__placeholder">{{ 'hero-apparel-1' | placeholder_svg_tag }}</div>
+          {%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+
+  {%- if slide_count > 1 -%}
+    <div class="hs__dots" role="tablist">
+      {%- for block in section.blocks -%}
+        <button
+          type="button"
+          class="hs__dot{% if forloop.first %} is-active{% endif %}"
+          data-hs-dot="{{ forloop.index0 }}"
+          aria-label="{{ forloop.index }} / {{ slide_count }}"
+          aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+        ></button>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+</div>
+
+{% stylesheet %}
+  .hs {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .hs__track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .hs__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .hs__slide {
+    position: relative;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: var(--hs-height-mobile);
+    background: var(--hs-bg, #e5e0da);
+    color: var(--hs-text, #111);
+  }
+
+  .hs__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hs__image,
+  .hs__placeholder,
+  .hs__placeholder svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+  }
+
+  .hs__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+    padding: 48px 24px;
+  }
+
+  .hs__heading {
+    margin: 0;
+    font-family: var(--font-heading--family, inherit);
+    font-size: clamp(2rem, 8vw, 3rem);
+    line-height: 1.1;
+    font-weight: 500;
+    color: inherit;
+  }
+
+  .hs__button {
+    display: inline-block;
+    padding: 16px 30px;
+    border: 2px solid currentColor;
+    border-radius: 3px;
+    color: inherit;
+    text-decoration: none;
+    font-size: 0.9375rem;
+    line-height: 1;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .hs__button:hover,
+  .hs__button:focus-visible {
+    background: var(--hs-text, #111);
+    color: var(--hs-bg, #fff);
+  }
+
+  .hs__dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .hs__dot {
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgb(255 255 255 / 0.55);
+    cursor: pointer;
+  }
+
+  .hs__dot.is-active {
+    background: #fff;
+    box-shadow: 0 0 0 4px rgb(0 0 0 / 0.12);
+  }
+
+  @media screen and (min-width: 750px) {
+    .hs__slide {
+      min-height: var(--hs-height);
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* Image sits on the right ~55% of the slide, text on the left */
+    .hs__media {
+      left: 42%;
+    }
+
+    .hs__content {
+      padding: 48px 24px 48px var(--hs-text-offset, 15%);
+    }
+
+    .hs__heading {
+      font-size: clamp(2.5rem, 4.2vw, 4.5rem);
+    }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  (function () {
+    function init(root) {
+      if (root.dataset.hsReady) return;
+      root.dataset.hsReady = 'true';
+
+      var track = root.querySelector('[data-hs-track]');
+      var dots = Array.prototype.slice.call(root.querySelectorAll('[data-hs-dot]'));
+      var slides = track ? track.children : [];
+      if (!track || slides.length < 2) return;
+
+      var index = 0;
+      var timer = null;
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function setActive(i) {
+        index = i;
+        dots.forEach(function (dot, n) {
+          dot.classList.toggle('is-active', n === i);
+          dot.setAttribute('aria-current', n === i ? 'true' : 'false');
+        });
+      }
+
+      function goTo(i) {
+        var target = (i + slides.length) % slides.length;
+        track.scrollTo({ left: slides[target].offsetLeft, behavior: reduceMotion ? 'auto' : 'smooth' });
+        setActive(target);
+      }
+
+      var scrollTimeout;
+      track.addEventListener('scroll', function () {
+        window.clearTimeout(scrollTimeout);
+        scrollTimeout = window.setTimeout(function () {
+          setActive(Math.round(track.scrollLeft / track.clientWidth));
+        }, 80);
+      });
+
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          goTo(parseInt(dot.dataset.hsDot, 10));
+          restart();
+        });
+      });
+
+      function stop() {
+        if (timer) window.clearInterval(timer);
+        timer = null;
+      }
+
+      function start() {
+        if (root.dataset.autoplay !== 'true' || reduceMotion) return;
+        stop();
+        timer = window.setInterval(function () {
+          goTo(index + 1);
+        }, parseInt(root.dataset.interval, 10) || 5000);
+      }
+
+      function restart() {
+        stop();
+        start();
+      }
+
+      root.addEventListener('mouseenter', stop);
+      root.addEventListener('mouseleave', start);
+      root.addEventListener('focusin', stop);
+      root.addEventListener('focusout', start);
+
+      start();
+    }
+
+    function initAll() {
+      document.querySelectorAll('[data-hero-slider]').forEach(init);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initAll);
+    } else {
+      initAll();
+    }
+    document.addEventListener('shopify:section:load', initAll);
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Hero slider",
+  "tag": "section",
+  "class": "section-hero-slider",
+  "max_blocks": 6,
+  "settings": [
+    {
+      "type": "text",
+      "id": "aria_label",
+      "label": "Accessibility label",
+      "default": "Featured promotions"
+    },
+    {
+      "type": "range",
+      "id": "height",
+      "label": "Height on desktop",
+      "min": 400,
+      "max": 900,
+      "step": 10,
+      "unit": "px",
+      "default": 680
+    },
+    {
+      "type": "range",
+      "id": "height_mobile",
+      "label": "Height on mobile",
+      "min": 300,
+      "max": 700,
+      "step": 10,
+      "unit": "px",
+      "default": 480
+    },
+    {
+      "type": "range",
+      "id": "text_offset",
+      "label": "Text distance from left edge (desktop)",
+      "min": 3,
+      "max": 30,
+      "step": 1,
+      "unit": "%",
+      "default": 15
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Autoplay slides",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "interval",
+      "label": "Change slides every",
+      "min": 3,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "default": 5
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Heading",
+          "info": "Press Enter to start a new line.",
+          "default": "Fall-Winter\nClearance Sales"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "See all products"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background color",
+          "default": "#e5e0da"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#161616"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero slider",
+      "blocks": [
+        { "type": "slide" },
+        { "type": "slide" }
+      ]
+    }
+  ]
+}
+{% endschema %}
