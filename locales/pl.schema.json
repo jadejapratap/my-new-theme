@@ -167,12 +167,13 @@
     "featured_image": "Wyróżniony obraz",
     "multicolumn": "Wielokolumnowy",
     "product_custom_property": "Instrukcje specjalne",
-    "hero_bottom_aligned": "Hero: Wyrównane do dołu",
+    "hero_bottom_aligned": "Obraz główny: wyrównanie do dołu",
     "blog_card": "Karta bloga",
     "blog_posts_grid": "Posty na blogu: siatka",
     "blog_posts_carousel": "Posty na blogu: karuzela",
     "blog_posts_editorial": "Posty na blogu: artykuł wstępny",
-    "excerpt": "Fragment"
+    "excerpt": "Fragment",
+    "footer_password": "Stopka hasła"
   },
   "settings": {
     "autoplay": "Autoodtwarzanie",
@@ -448,7 +449,6 @@
     "border_thickness": "Grubość obramowania",
     "bottom_row": "Wiersz dolny",
     "button_text_case": "Wielkość liter tekstu",
-    "button_text_weight": "Waga tekstu",
     "auto_open_cart_drawer": "„Dodaj do koszyka” automatycznie otwiera szufladę",
     "collection_count": "Liczba kolekcji",
     "custom_liquid": "Kod Liquid",
@@ -486,7 +486,6 @@
     "card_hover_effect": "Efekt najechania kursorem na kartę",
     "card_size": "Rozmiar karty",
     "collection_title_case": "Wielkość liter tytułu kolekcji",
-    "effects": "Efekty",
     "inventory_threshold": "Niski próg zapasu",
     "mobile_card_size": "Rozmiar karty mobilnej",
     "page": "Strona",
@@ -506,11 +505,12 @@
     "gift_card_form": "Formularz karty prezentowej",
     "seller_note_open_by_default": "Domyślnie otwórz uwagę dla sprzedawcy",
     "add_to_cart_animation": "Dodaj do koszyka",
+    "custom_link": "Niestandardowy link",
     "product_custom_property": {
       "heading": "Nagłówek",
       "description": "Opis",
       "key": "Nazwa właściwości",
-      "key_info": "Musi być unikatowy dla każdego bloku. Wyświetlany w koszyku, przy kasie i w szczegółach zamówienia.",
+      "key_info": "Musi być unikatowa dla każdego bloku. Wyświetlana w koszyku, podczas realizacji zakupu i w szczegółach zamówienia.",
       "placeholder_text": "Tekst zastępczy",
       "default_heading": "Spersonalizuj produkt",
       "default_placeholder": "Wprowadź instrukcje specjalne",
@@ -530,7 +530,13 @@
       "checkbox_preset": "Etykieta pola wyboru"
     },
     "blog": "Blog",
-    "post_count": "Liczba postów"
+    "post_count": "Liczba postów",
+    "animation": "Animacja",
+    "top_level_size": "Rozmiar najwyższego poziomu",
+    "submenu_text_style": "Styl tekstu podmenu",
+    "empty_cart_button_link": "Link przycisku pustego koszyka",
+    "auto_load_products": "Automatyczne ładowanie produktów podczas przewijania",
+    "products_per_page": "Produktów na stronę"
   },
   "options": {
     "adapt_to_image": "Dostosuj do obrazu",
@@ -907,10 +913,55 @@
     "section_link": "Link sekcji",
     "gift_card_form_description": "Klienci mogą wysyłać karty prezentowe na adres e-mail odbiorcy wraz z osobistą wiadomością. [Dowiedz się więcej](https://help.shopify.com/manual/products/gift-card-products)",
     "heading": "Nagłówek",
-    "resource_reference_product_custom_property": "Dodaj konfigurowalne pola wprowadzania danych, aby zbierać niestandardowe informacje, które zostaną dodane do danej pozycji zamówienia i będą później widoczne w szczegółach zamówienia."
+    "resource_reference_product_custom_property": "Dodaj konfigurowalne pola wprowadzania danych, aby zbierać niestandardowe informacje, które zostaną dodane do danej pozycji zamówienia i będą później widoczne w szczegółach zamówienia.",
+    "block_link": "Blokuj link",
+    "submenu_feature": "Funkcja podmenu",
+    "cart_features": "Funkcje koszyka",
+    "email_signup": "Rejestracja – mailing"
   },
   "html_defaults": {
-    "share_information_about_your": "<p>Udostępnij klientom informacje o swojej marce. Opisz produkt, udostępnij ogłoszenia lub przywitaj klientów w swoim sklepie.</p>"
+    "share_information_about_your": "<p>Udostępnij klientom informacje o swojej marce. Opisz produkt, udostępnij ogłoszenia lub przywitaj klientów w swoim sklepie.</p>",
+    "bestseller_h2": "<h2>Bestsellery</h2>",
+    "bestseller_h3": "<h3>Bestsellery</h3>",
+    "bestseller": "<p>Bestseller</p>",
+    "build_better": "<p>Wierzymy w lepsze jutro</p>",
+    "contact_us": "<h2>Skontaktuj się z nami</h2>",
+    "discover_bestsellers": "<p>Odkryj bestsellery, które zdobyły serca naszych klientów dzięki idealnemu połączeniu funkcjonalności i stylu.</p>",
+    "everythings_starts_with_why": "<p>Wszystko, co robimy, zaczyna się od pytania „dlaczego”</p>",
+    "explore_latest_products": "<p>Sprawdź nasze nowości.</p>",
+    "faq": "<h3>Często zadawane pytania</h3>",
+    "first_to_know": "<p>Dowiedz się jako pierwszy o nowych kolekcjach i specjalnych ofertach. </p>",
+    "free_returns": "<p>30 dni na bezpłatny zwrot</p>",
+    "free_shipping_over": "<p>Darmowa wysyłka powyżej 50 USD</p>",
+    "goal_for_every_customer": "<p>Naszym celem jest zapewnienie całkowitego zadowolenia każdego klienta z zakupu. Jeśli coś nie spełni Twoich oczekiwań, poinformuj nas o tym – dołożymy wszelkich starań, aby to naprawić.</p>",
+    "home_to_shirts": "<p>Strona główna → Koszule</p>",
+    "intentional_design": "<h2>Zaprojektowane intencjonalnie</h2>",
+    "introducing_h2": "<h2><em>Nowości</em></h2>",
+    "latest_products": "<p>Wprowadzamy nowości specjalnie na ten sezon. Kupuj ulubione produkty, zanim znikną!</p>",
+    "made_local_and_global": "<p>Nasze produkty są wytwarzane zarówno lokalnie, jak i globalnie. Starannie dobieramy naszych partnerów produkcyjnych, aby zapewnić wysoką jakość i uczciwą cenę naszych produktów.</p>",
+    "made_with_care_h2": "<h2>Staranne wykonanie</h2>",
+    "made_with_care_extended": "<p>Nasz starannie wykonany i bezgranicznie uwielbiany przez naszych klientów flagowy bestseller przekracza wszelkie oczekiwania.</p>",
+    "made_with_care": "<p>Starannie wykonany i bezgranicznie uwielbiany przez naszych klientów.</p>",
+    "make_things_better_extended": "<p>Nasze produkty współgrają ze sobą i starczają na dłużej. Pozwalają rozwiązywać realne problemy dzięki prostym projektom i uczciwym materiałom.</p>",
+    "make_things_better": "<p>Nasze produkty współgrają ze sobą i starczają na dłużej.</p>",
+    "may_also_like": "<h4>Może Ci się spodobać również</h4>",
+    "new_arrivals_h1": "<h1>Nowości</h1>",
+    "new_arrivals_h2": "<h2>Nowości</h2>",
+    "new_arrivals_h3": "<h3>Nowości</h3>",
+    "product_launch": "<p>Sprawdź, jak powstały nasze nowości produktowe.</p>",
+    "product_story": "<p>Sercem każdego produktu jest wyjątkowa opowieść zbudowana wokół naszego zaangażowania w jakość i innowacyjność. Każdy nasz produkt poprawia jakość codziennego życia i sprawia radość.</p>",
+    "real_people": "<p>Wspaniałe produkty wytwarzane przez prawdziwych ludzi</p>",
+    "related_product": "<h3>Powiązane produkty</h3>",
+    "return_policy": "<h2>Jaka jest polityka zwrotów?</h2>",
+    "reviews": "<p>★★★★★ 368 ocen</p>",
+    "shipping_based_on_location": "<p>Koszt wysyłki jest obliczany w oparciu o Twoją lokalizację i pozycje w Twoim zamówieniu. Poznasz go przed każdym zakupem.</p>",
+    "shop_by_collection": "<h3>Kupuj według kolekcji</h3>",
+    "signature_products": "<h2>Nasz flagowy produkt</h2>",
+    "styled_with": "<h3>Zestaw z</h3>",
+    "subscribe": "<h2>Subskrybuj nasze wiadomości e-mail</h2>",
+    "team_with_goal": "<h2>Zespół z celem</h2>",
+    "unable_to_accept_returns": "<p>Nie akceptujemy zwrotów określonych produktów. Są one wyraźnie oznaczone przed zakupem.</p>",
+    "work_quickly_to_ship": "<p>Dokładamy starań, aby jak najszybciej wysłać Twoje zamówienie. Po wysyłce otrzymasz wiadomość e-mail z dalszymi informacjami. Termin dostawy może różnić się w zależności od Twojej lokalizacji.</p>"
   },
   "text_defaults": {
     "collapsible_row": "Zwijany wiersz",
@@ -923,7 +974,26 @@
     "sign_up": "Zarejestruj się",
     "welcome_to_our_store": "Witamy w naszym sklepie",
     "be_bold": "Odważ się.",
-    "shop_our_latest_arrivals": "Odkryj nasze najnowsze produkty!"
+    "shop_our_latest_arrivals": "Odkryj nasze najnowsze produkty!",
+    "are_purchases_final_sale": "Czy jakieś zakupy są objęte ostateczną wyprzedażą?",
+    "care_instructions": "Instrukcje dotyczące pielęgnacji",
+    "cart": "Koszyk",
+    "discover_collection": "Odkryj kolekcję",
+    "fit": "dopasowanie",
+    "how_much_for_shipping": "Jaki jest koszt wysyłki?",
+    "learn_more": "Dowiedz się więcej",
+    "manufacturing": "Produkcja",
+    "materials": "Materiały",
+    "return_policy": "Polityka zwrotów",
+    "shipping": "Wysyłka",
+    "shop_now_button_label": "Kup teraz",
+    "sign_up_button_label": "Zarejestruj się",
+    "submit_button_label": "Prześlij",
+    "up_the_ante": "Podbij\nstawkę",
+    "view_all_button_label": "Wyświetl wszystko",
+    "what_is_return_policy": "Jaka jest polityka zwrotów?",
+    "when_will_order_arrive": "Kiedy otrzymam zamówienie?",
+    "where_are_products_made": "Gdzie wytwarzane są produkty?"
   },
   "info": {
     "video_alt_text": "Opisz film dla użytkowników technologii asystujących",
@@ -947,7 +1017,9 @@
     "applies_on_image_only": "Dotyczy tylko obrazów",
     "hover_effects": "Dotyczy kart produktów i kolekcji",
     "pills_usage": "Używane przez zastosowane filtry, kody rabatowe i sugestie wyszukiwania",
-    "hide_logo_on_home_page_help": "Logo pozostanie widoczne, gdy przypięty nagłówek będzie aktywny"
+    "hide_logo_on_home_page_help": "Logo pozostanie widoczne, gdy przypięty nagłówek będzie aktywny",
+    "media_type_info": "Funkcje są wypełniane na podstawie Twoich linków menu",
+    "logo_height": "Wpływa tylko na logo nagłówka"
   },
   "categories": {
     "product_list": "Polecana kolekcja",
@@ -966,6 +1038,7 @@
     "decorative": "Ozdobne",
     "products": "Produkty",
     "other_sections": "Inny",
-    "storytelling": "Opowiadanie historii"
+    "storytelling": "Opowiadanie historii",
+    "text": "Tekst"
   }
 }

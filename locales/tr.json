@@ -50,14 +50,13 @@
     "scroll_to": "{{ title }} bölümüne git",
     "loading_product_recommendations": "Ürün önerileri yükleniyor",
     "discount": "İndirim kodu uygula",
-    "discount_menu": "İndirim Menüsü",
+    "discount_menu": "İndirim Kodları",
     "discount_applied": "Uygulanan indirim kodu: {{ code }}",
     "open_cart_drawer": "Sepeti aç",
     "pause_video": "Videoyu duraklat",
     "inventory_status": "Envanter durumu",
     "find_country": "Ülke bul",
-    "localization_region_and_language": "Bölge ve dil seçiciyi aç",
-    "open_search_modal": "Aramayı aç",
+    "localization_region_and_language": "Bölge ve dil seçici",
     "decrease_quantity": "Adedi azalt",
     "increase_quantity": "Adedi artır",
     "quantity": "Adet",
@@ -102,7 +101,7 @@
     "sign_up": "Kaydol",
     "sort": "Sırala",
     "show_all_options": "Tüm seçenekleri göster",
-    "open": "Aç"
+    "open": "Açık"
   },
   "content": {
     "reviews": "değerlendirme",

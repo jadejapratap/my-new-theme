@@ -55,8 +55,7 @@
     "inventory_status": "Статус на стоковите запаси",
     "pause_video": "Пауза на видеоклипа",
     "find_country": "Търсене на държава",
-    "localization_region_and_language": "Отваряне на диалогов прозорец за избор на регион и език",
-    "open_search_modal": "Отваряне на търсенето",
+    "localization_region_and_language": "Инструмент за избор на регион и език",
     "decrease_quantity": "Намаляване на количеството",
     "increase_quantity": "Увеличаване на количеството",
     "quantity": "Количество",
@@ -229,7 +228,7 @@
     "recipient_form_fields_hidden": "Полетата във формуляра за получателя вече са скрити",
     "recipient_form_error": "Възникна грешка при подаването на формуляра",
     "product_custom_property_character_count": "Използвани знаци: {{ used_chars }}/{{ max_chars }}",
-    "terms_and_policies": "Условия и политики"
+    "terms_and_policies": "Правила и условия"
   },
   "gift_cards": {
     "issued": {

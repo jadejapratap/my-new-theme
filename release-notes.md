@@ -1,31 +1,36 @@
-# Release Notes - Version 2.1.6
+# Release Notes - Version 3.0.1
 
-This release introduces a new "Blog posts" section and a new Hero layout preset. It also implements fixes for several sections and features, as well as performance improvements for images and animations.
+This release focuses on accessibility improvements across the theme, adds infinite scroll for product grids, and fixes several bugs related to product selection and display.
 
 ## What's Changed
 
 ### Added
 
-- [Hero] Added new layout preset
-- [Blog posts] Added new section
+- [Product grid] Added optional infinite scroll
 
 ### Changed
 
-- [Cart] Adjusted animation on initial page load
-- [Cart] Adjusted discount code disclosure panel for accessibility
-- [Footer] Adjusted policies display, now showing in a disclosure
-- [Header] Adjusted localization feature position in Header when left
+- [Password page] Made footer a section of its own
 
 ### Fixes and improvements
 
-- [Header] Fixed mega menu to scroll when using long menu lists
-- [Header] Fixed menus images in mega menus with 5+ collection columns
-- [Header] Fixed logic displaying featured products in menus and search modals to improve consistency
-- [Hero] Fixed section height when header is transparent
-- [Hero] Fixed Hero section media positioning
-- [Product card] Fixed to display correct image for variants
-- [Product card] Fixed product title display in quick add modal
-- [Product page] Fixed iOS double-tap functionality for product page zoom
-- [Global] Fixed focal point for product images
-- [Performance] Reduced the amount of medias in the product card image gallery to a maximum of 5
-- [Performance] Improved performance of background images
+- [Gift card] Fixed gift card recipient form character count color inheritance
+- [Quantity rules] Fixed bug with how numbers were being compared
+- [Product cards] Fixed missing image preview on swatch mouseover
+- [Variant picker] Improved variant picker motion
+- [Product] Fixed variant selection when using More payment options without add-to-cart button
+- [Quick add] Fixed Quick Add modal showing up when product info is missing
+- [Hero] Fixed logic for blurred reflection slider and toggle
+- [Collection link] Fixed text wrapping on mobile
+- [Header drawer] Fixed expand first group settings
+- [Blog] Fixed blog post template app blocks
+- [Accessibility] Enhanced mobile account drawer accessibility
+- [Accessibility] Improved cart launcher accessibility
+- [Accessibility] Improved accessibility for popovers
+- [Accessibility] Added explicit "Close" button to search dialog
+- [Accessibility] Improved "Search" button accessibility
+- [Accessibility] Improved localization component accessibility
+- [Accessibility] Improved contrast for the predictive search "Clear" button
+- [Accessibility] Added h1 tags to page templates for SEO and accessibility
+- [Accessibility] Enhanced dialog accessibility with ARIA labeling
+- [Performance] Improved performance when opening / closing dialogs

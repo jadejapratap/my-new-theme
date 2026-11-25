@@ -37,7 +37,7 @@
     "search_results_count": "{{ count }} Suchergebnisse für „{{ query }}“ gefunden",
     "search_results_no_results": "Keine Ergebnisse für „{{ query }}“ gefunden",
     "filters": "Filter",
-    "account": "Kontomenü öffnen",
+    "account": "Konto",
     "cart": "Warenkorb",
     "cart_count": "Artikel im Warenkorb insgesamt",
     "filter_count": {
@@ -49,15 +49,14 @@
     "slide_status": "Folie {{ index }} von {{ length }}",
     "scroll_to": "Zu {{ title }} scrollen",
     "discount": "Rabattcode anwenden",
-    "discount_menu": "Rabatt-Menü",
+    "discount_menu": "Rabattcodes",
     "loading_product_recommendations": "Produktempfehlungen werden geladen",
     "discount_applied": "Angewendeter Rabattcode: {{ code }}",
     "open_cart_drawer": "Warenkorb öffnen",
     "inventory_status": "Inventarstatus",
     "pause_video": "Video pausieren",
     "find_country": "Land finden",
-    "localization_region_and_language": "Region- und Sprachauswahl öffnen",
-    "open_search_modal": "Suche öffnen",
+    "localization_region_and_language": "Region- und Sprachwahl",
     "decrease_quantity": "Menge verringern",
     "increase_quantity": "Menge erhöhen",
     "quantity": "Anzahl",
@@ -229,7 +228,7 @@
     "recipient_form_fields_hidden": "Empfängerformularfelder sind jetzt ausgeblendet.",
     "recipient_form_error": "Beim Absenden des Formulars ist ein Fehler aufgetreten.",
     "product_custom_property_character_count": "{{ used_chars }}/{{ max_chars }} Zeichen verwendet",
-    "terms_and_policies": "Bestimmungen und Richtlinien"
+    "terms_and_policies": "Geschäftsbedingungen und Richtlinien"
   },
   "gift_cards": {
     "issued": {
